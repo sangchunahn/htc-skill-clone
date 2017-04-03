@@ -52,7 +52,6 @@ class PhoneList extends Component {
 
 function mapStateToProps(state) {
     return {
-
       smartphone: state.smartphones.all
     }
 }
