@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import RegisterForm from './registerForm'
+import RegisterForm from './RegisterForm'
 import { register } from '../../actions/index'
 
 class Register extends Component {
