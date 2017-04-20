@@ -7,7 +7,7 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  devtool: 'inline-source-map',
+  devtool: 'eval-inline-map',
   module: {
     loaders: [{
       exclude: /node_modules/,
@@ -22,6 +22,12 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './',
+        proxy: {
+            '/api/': {
+                target: 'http://localhost:3000',
+                secure: false
+            }
+        }    
   }
 };
