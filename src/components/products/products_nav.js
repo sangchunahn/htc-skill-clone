@@ -18,12 +18,9 @@ class ProductNav extends Component {
     }
 
     isThisActive(target) {
-        console.log('ran')
         if (target === this.state.activeTarget) {
-            console.log('isActive')
             return 'is-active'
         } else {
-             console.log('product-leftnav-container')
             return 'item-nav-phone';
         }
     }

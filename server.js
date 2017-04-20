@@ -10,7 +10,7 @@ const app = module.exports = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-// app.use(express.static('./'))
+app.use(express.static('./'))
 
 var db = massive.connectSync({
   connectionString: config.dbstring
