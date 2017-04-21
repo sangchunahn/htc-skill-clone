@@ -10,7 +10,7 @@ const app = module.exports = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static('./'))
+app.use(express.static('./bundle.js'))
 
 var db = massive.connectSync({
   connectionString: config.dbstring
@@ -34,7 +34,9 @@ app.delete('/api/delete-from-cart', controller.deleteFromCart);
 app.post('/api/register', controller.register);
 app.post('/api/login', controller.login);
 
-
+app.get('*', function(req, res){
+  res.sendFile(__dirname + '/index.html')
+})
 app.listen(3000, function(){
     console.log("listening on 3000")
 })
