@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.static('./bundle.js'))
 
 var db = massive.connectSync({
-  connectionString: config.dbstring
+  connectionString: process.env.dbstring
   
 });
 
